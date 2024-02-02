@@ -5,11 +5,11 @@ const findLongestWord = (arr) => {
   arr.forEach((item) => {
     const itemSize = item.length;
     if (itemSize > maxWord[1]) {
-      maxSize = [item, itemSize];
+      maxWord = [item, itemSize];
     }
   });
 
-  return maxSize[0];
+  return maxWord[0];
 };
 
 const sumUniqueNumbers = (arr) => {
@@ -28,7 +28,7 @@ const sumUniqueNumbers = (arr) => {
 const mergeArrays = (...arrs) => {
   const newArr = arrs.flat(2);
   const result = [];
-  newArr.map((item) => {
+  newArr.forEach((item) => {
     if (!result.includes(item)) {
       result.push(item);
     }
@@ -38,10 +38,12 @@ const mergeArrays = (...arrs) => {
 };
 
 const hasProperty = (obj, key) => (
+  // eslint-disable-next-line no-prototype-builtins
   obj.hasOwnProperty(key)
 );
 
 const getPropertyValue = (obj, key) => (
+  // eslint-disable-next-line no-prototype-builtins
   obj.hasOwnProperty(key) ? obj[key] : undefined
 );
 
@@ -54,4 +56,13 @@ const invertObject = (obj) => {
   });
 
   return result;
+};
+
+export {
+  findLongestWord,
+  sumUniqueNumbers,
+  mergeArrays,
+  hasProperty,
+  getPropertyValue,
+  invertObject,
 };
